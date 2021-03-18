@@ -7,22 +7,22 @@ class Server {
         this.port = process.env.PORT
         this.users_path = "/api/users";
         // Middlewares
-        this.connect_dba();
+        //this.connect_dba();
         this.middlewares();
         this.routes();
     }
-    connect_dba() {
-        const connection = mysql.createConnection({
-            host: "localhost",
-            database: "QUERY",
-            user: "root",
-            password: "Xboxplaywi95"
-        });
-        connection.connect((err) => {
-            if (err) throw err;
-            console.log("Connected!");
-        })
-    }
+    //connect_dba() {
+    //    const connection = mysql.createConnection({
+    //        host: "localhost",
+    //        database: "QUERY",
+    //        user: "root",
+    //        password: "Xboxplaywi95"
+    //    });
+    //    connection.connect((err) => {
+    //        if (err) throw err;
+    //        console.log("Connected!");
+    //    })
+    //}
     middlewares() {
         this.app.use( cors() );
         // Parse the data in this case in json
