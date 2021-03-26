@@ -25,7 +25,7 @@ const users_post = async(req, res = response) => {
     const body = req.body;
     await getConnection().query(
         insert_query('Employee', body),
-        (err, results, fields) => {
+        async(err, results, fields) => {
             if (err) {
                 res.json({
                     ok: false,
