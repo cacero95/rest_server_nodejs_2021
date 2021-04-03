@@ -14,7 +14,7 @@ const get_user = async ( req = request, res = response ) => {
     ? await User.findById( req.body.id ).then(( user ) => {
         res.json({ user });
     }).catch((err) => {
-        res.json({ message: err.message })
+        res.json({ message: err.message });
     }) : await User.findOne({ email: req.body.email }).then(( user ) => {
         res.json({ user });
     }).catch(( err ) => {
